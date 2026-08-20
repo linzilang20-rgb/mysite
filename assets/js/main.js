@@ -1,85 +1,81 @@
-// ===== Hero background video (YouTube IFrame API) =====
-// Uses the API instead of a `playlist=` loop so YouTube never renders
-// prev/next playlist controls over the background.
-const heroMount = document.getElementById("hero-player");
-if (heroMount) {
-  const tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  document.head.appendChild(tag);
+const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  window.onYouTubeIframeAPIReady = function () {
-    new YT.Player("hero-player", {
-      videoId: heroMount.dataset.videoId,
-      playerVars: {
-        autoplay: 1,
-        mute: 1,
-        controls: 0,
-        disablekb: 1,
-        fs: 0,
-        modestbranding: 1,
-        rel: 0,
-        showinfo: 0,
-        iv_load_policy: 3,
-        playsinline: 1,
-      },
-      events: {
-        onReady: (e) => {
-          e.target.mute();
-          e.target.playVideo();
-          document.querySelector(".hero")?.classList.add("video-ready");
+// ===== Hero background video =====
+// Self-hosted rather than a YouTube embed: an embedded player paints its own
+// chrome (play/pause overlay, playlist arrows) whenever it buffers or loops,
+// and none of that can be suppressed from outside the iframe.
+const heroVideo = document.querySelector(".hero-video-bg video");
+if (heroVideo) {
+  const showVideo = () => document.querySelector(".hero")?.classList.add("video-ready");
+  if (heroVideo.readyState >= 3) showVideo();
+  heroVideo.addEventListener("canplay", showVideo, { once: true });
 
-          // A paused/ended player draws YouTube's overlay chrome on top of the
-          // hero, so nudge it back to playing whenever it settles anywhere else.
-          setInterval(() => {
-            const s = e.target.getPlayerState();
-            if (s === YT.PlayerState.ENDED) {
-              e.target.seekTo(0);
-              e.target.playVideo();
-            } else if (s === YT.PlayerState.PAUSED || s === YT.PlayerState.CUED) {
-              e.target.playVideo();
-            }
-          }, 1000);
-        },
-        onStateChange: (e) => {
-          if (e.data === YT.PlayerState.ENDED) {
-            e.target.seekTo(0);
-            e.target.playVideo();
-          } else if (e.data === YT.PlayerState.PAUSED) {
-            e.target.playVideo();
-          }
-        },
-      },
-    });
-  };
+  // Some browsers refuse autoplay until muted state is confirmed in JS.
+  heroVideo.muted = true;
+  const tryPlay = () => heroVideo.play().catch(() => {});
+  tryPlay();
+  // Mobile Safari suspends background video when the tab is hidden.
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) tryPlay();
+  });
 }
 
 // ===== Mobile nav toggle =====
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
+  navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
   navLinks.querySelectorAll("a").forEach((a) =>
     a.addEventListener("click", () => navLinks.classList.remove("open"))
   );
 }
 
 // ===== Scroll reveal =====
-const revealEls = document.querySelectorAll(".reveal");
+// `.reveal` fades a block in; `.stagger` additionally walks its children so
+// grid items arrive one after another rather than all at once.
+const revealEls = document.querySelectorAll(".reveal, .stagger");
 if (revealEls.length) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  revealEls.forEach((el) => io.observe(el));
+  if (REDUCED_MOTION) {
+    revealEls.forEach((el) => el.classList.add("in"));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          if (el.classList.contains("stagger")) {
+            [...el.children].forEach((child, i) => {
+              child.style.transitionDelay = `${Math.min(i * 70, 560)}ms`;
+            });
+          }
+          el.classList.add("in");
+          io.unobserve(el);
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -8% 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  }
+}
+
+// ===== Hero parallax =====
+// Drifts the headline slower than the page and fades it as it leaves.
+const heroInner = document.querySelector(".hero-inner");
+if (heroInner && !REDUCED_MOTION) {
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        heroInner.style.transform = `translateY(${y * 0.28}px)`;
+        heroInner.style.opacity = String(Math.max(0, 1 - y / (window.innerHeight * 0.75)));
+      }
+      ticking = false;
+    });
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
 }
 
 // ===== Lightbox (image gallery) =====
