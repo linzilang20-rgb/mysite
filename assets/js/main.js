@@ -33,12 +33,9 @@ if (navToggle && navLinks) {
 // ===== Scroll reveal =====
 // `.reveal` fades a block in; `.stagger` additionally walks its children so
 // grid items arrive one after another rather than all at once.
-const revealEls = document.querySelectorAll(".reveal, .stagger");
-if (revealEls.length) {
-  if (REDUCED_MOTION) {
-    revealEls.forEach((el) => el.classList.add("in"));
-  } else {
-    const io = new IntersectionObserver(
+const revealObserver = REDUCED_MOTION
+  ? null
+  : new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -49,14 +46,21 @@ if (revealEls.length) {
             });
           }
           el.classList.add("in");
-          io.unobserve(el);
+          revealObserver.unobserve(el);
         });
       },
       { threshold: 0.1, rootMargin: "0px 0px -8% 0px" }
     );
-    revealEls.forEach((el) => io.observe(el));
-  }
+
+// Re-runnable so regrouped galleries animate too.
+function initReveal(scope = document) {
+  scope.querySelectorAll(".reveal, .stagger").forEach((el) => {
+    if (el.classList.contains("in")) return;
+    if (revealObserver) revealObserver.observe(el);
+    else el.classList.add("in");
+  });
 }
+initReveal();
 
 // ===== Hero parallax =====
 // Drifts the headline slower than the page and fades it as it leaves.
@@ -78,16 +82,90 @@ if (heroInner && !REDUCED_MOTION) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
+// ===== Gallery grouping (by medium / by project) =====
+// One pool of figures, two ways to read it. Switching moves the existing
+// nodes rather than re-creating them, so nothing is downloaded twice.
+const galleryRoot = document.getElementById("gallery-root");
+if (galleryRoot) {
+  const allFigures = [...galleryRoot.querySelectorAll("figure")];
+
+  const GROUPS = {
+    medium: [
+      ["watercolor", "水彩画", "Watercolor", "紙と水彩絵具による作品。にじみと重なりを活かして、光や空気の質感を描いています。"],
+      ["pencil-color", "色鉛筆画", "Colored Pencil", "色鉛筆による作品。線を重ねて色をつくり、やわらかい質感と物語の空気感を表現しています。"],
+      ["dessin", "鉛筆デッサン", "Pencil Dessin", "鉛筆による静物デッサン。手をモチーフに、構造と陰影の観察を重ねた練習作です。"],
+      ["digital", "板絵作品", "Digital Painting", "液晶タブレットと Photoshop / Clip Studio Paint によるデジタルイラストとキャラクターデザイン。"],
+      ["modeling", "モデリング作品", "3D Modeling", "Blender / Maya / ZBrush によるモデリング。テクスチャは Substance 3D Painter で制作しています。"],
+      ["environment", "地形・環境デザイン", "Environment Art", "背景シーンの構築とライティング。ブロックアウトからアセット配置、雰囲気づくりまでを担当しました。"],
+    ],
+    project: [
+      ["himawari", "ひまわりの日", "Sunflower Day", "手描き 2D アニメーション。イメージボード、背景美術、キャラクター設定まで水彩と色鉛筆で制作しました。"],
+      ["zhujian", "逐剣", "Chasing the Sword", "3D / 2D アニメーション。キャラクターデザインと雪山の背景シーンを担当しています。"],
+      ["abyss", "ABYSS II", "Abyss II", "CG ショートフィルム。巨像のモデリングから洞窟シーンのライティングまで一貫して制作しました。"],
+      ["cyberpunk", "サイバーパンクシティ", "Cyberpunk City", "3DCG による都市の環境デザイン。ブロックアウトからシェーダー設計、ライティングまで Blender で構築しました。"],
+      ["telescope", "望遠鏡", "Telescope", "プロップデザイン。アイデアスケッチから始め、ハードサーフェスモデリングとテクスチャリングを行いました。"],
+      ["honda", "Honda CIVIC", "Honda CIVIC", "CG 映像制作。車両のモデリング、テクスチャ、サーキット背景とレンダリングを担当しました。"],
+      ["study", "練習・個人制作", "Studies & Personal Work", "課題や個人制作として描いたイラスト、デッサン、CG の習作です。"],
+    ],
+  };
+
+  const render = (view) => {
+    const key = view === "project" ? "project" : "medium";
+    galleryRoot.textContent = "";
+
+    GROUPS[view].forEach(([id, ja, en, desc], i) => {
+      const items = allFigures.filter((f) => f.dataset[key] === id);
+      if (!items.length) return;
+
+      const group = document.createElement("div");
+      group.className = "gallery-group";
+      group.innerHTML = `
+      <div class="gallery-group-head">
+        <span class="group-index">${String(i + 1).padStart(2, "0")}</span>
+        <div>
+          <h3></h3>
+          <p class="group-en"></p>
+        </div>
+        <p class="group-desc"></p>
+      </div>
+      <div class="masonry stagger"></div>`;
+      group.querySelector("h3").textContent = ja;
+      group.querySelector(".group-en").textContent = en;
+      group.querySelector(".group-desc").textContent = desc;
+
+      const masonry = group.querySelector(".masonry");
+      items.forEach((f) => {
+        f.style.transitionDelay = "";
+        masonry.appendChild(f);
+      });
+      galleryRoot.appendChild(group);
+    });
+
+    initReveal(galleryRoot);
+  };
+
+  document.querySelectorAll(".view-toggle button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.getAttribute("aria-pressed") === "true") return;
+      document.querySelectorAll(".view-toggle button").forEach((b) =>
+        b.setAttribute("aria-pressed", String(b === btn))
+      );
+      render(btn.dataset.view);
+    });
+  });
+}
+
 // ===== Lightbox (image gallery) =====
+// Delegated so figures moved by the grouping switch stay clickable.
 const lightbox = document.getElementById("lightbox");
 if (lightbox) {
   const lightboxImg = lightbox.querySelector("img");
-  document.querySelectorAll("[data-lightbox]").forEach((fig) => {
-    fig.addEventListener("click", () => {
-      lightboxImg.src = fig.dataset.full || fig.querySelector("img").src;
-      lightboxImg.alt = fig.querySelector("img").alt || "";
-      lightbox.classList.add("open");
-    });
+  document.addEventListener("click", (e) => {
+    const fig = e.target.closest("[data-lightbox]");
+    if (!fig) return;
+    lightboxImg.src = fig.dataset.full || fig.querySelector("img").src;
+    lightboxImg.alt = fig.querySelector("img").alt || "";
+    lightbox.classList.add("open");
   });
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox || e.target.classList.contains("close-btn")) {
