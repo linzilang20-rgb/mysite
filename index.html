@@ -12,12 +12,11 @@
 
 <nav class="site-nav">
   <div class="container">
-    <a class="brand" href="index.html">LIN ZILANG<span>.</span></a>
+    <a class="brand" href="index.html">LIN ZILANG</a>
     <ul class="nav-links">
       <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="about.html">About</a></li>
       <li><a href="works.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
       <div class="social-icons">
@@ -35,8 +34,7 @@
 
 <header class="hero">
   <div class="hero-video-bg">
-    <iframe src="https://www.youtube.com/embed/Va5vXFq86l4?autoplay=1&mute=1&loop=1&playlist=Va5vXFq86l4&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1"
-      title="サイバーパンクシティ CG background" allow="autoplay; encrypted-media" loading="eager"></iframe>
+    <div id="hero-player" data-video-id="Va5vXFq86l4"></div>
   </div>
   <div class="container hero-inner">
     <p class="eyebrow">CG · Illustration · Animation</p>
@@ -44,10 +42,35 @@
     <p>CGとアニメーション、イラストレーションを軸に制作しています。武蔵野美術大学大学院にて映像を専攻。現実にはない世界と物語を、絵と映像で届けたい。</p>
     <div class="hero-cta">
       <a class="btn btn-solid" href="works.html">View Portfolio</a>
-      <a class="btn" href="about.html">About Me</a>
+      <a class="btn" href="#about">About Me</a>
     </div>
   </div>
 </header>
+
+<section class="container" id="about">
+  <div class="section-head reveal">
+    <p class="eyebrow">About</p>
+    <h2>プロフィール</h2>
+  </div>
+
+  <div class="about-layout reveal">
+    <img class="about-photo" src="assets/img/site/about-portrait.jpg" alt="林梓朗（リン シロウ）">
+
+    <div class="about-copy">
+      <p>こんにちは、私はリン シロウです。現在、武蔵野美術大学の映像・写真学科に在籍している大学院一年生です。私はこれまでに様々なクリエイティブな分野で活動してきましたが、特にCG（コンピュータグラフィックス）に強い興味を持っています。</p>
+      <p>私の趣味は絵を描くこととスキーです。絵を描くことは、私の創造力を育み、技術を磨くための重要な手段です。スキーは、自然の中でリフレッシュするだけでなく、バランス感覚や集中力を養う助けとなっています。</p>
+
+      <h3>現在の研究分野</h3>
+      <p>現在の研究分野はCGです。CGの魅力は、その無限の可能性にあります。現実には存在しない世界やキャラクターを創り出すことができるだけでなく、現実を超えた美しさや驚きを表現することができます。私にとってCGは、アイデアを具現化するための最適なツールであり、視覚的な物語を語る手段です。</p>
+
+      <h3>目標</h3>
+      <p>私の目標は、手描きアニメーションを通じて観る人に感動や喜びを届けることです。アニメーションを通じて物語を語り、キャラクターの感情を伝えることで、人々の心に残る作品を作りたいと考えています。</p>
+      <p>これからも新しい技術やスタイルを取り入れながら、手描きアニメーションとCGの魅力を追求していきます。私の作品をご覧いただき、ご意見やご感想をお寄せいただけると幸いです。ありがとうございました。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
 
 <section class="container">
   <div class="section-head reveal">
@@ -58,41 +81,48 @@
 
   <div class="featured-grid reveal">
     <a href="works.html">
-      <img src="assets/img/works/portfolio-cover-natsu-no-kokoro.jpg" alt="夏のこころ ポートフォリオ表紙イラスト" loading="lazy">
+      <img src="assets/img/works/illustration-sea-hair-girl.jpg" alt="イラスト作品" loading="lazy">
     </a>
     <a href="works.html">
-      <img src="assets/img/works/concept-salaryman-ant.jpg" alt="サラリーマンとアリ コンセプトアート" loading="lazy">
+      <img src="assets/img/works/illustration-picnic.jpg" alt="ピクニック イラスト" loading="lazy">
     </a>
     <a href="works.html">
-      <img src="assets/img/works/illustration-portrait-orange-hair.jpg" alt="イラスト作品" loading="lazy">
+      <img src="assets/img/works/illustration-blue-hair-flower.jpg" alt="イラスト作品" loading="lazy">
     </a>
     <a href="works.html">
-      <img src="assets/img/works/illustration-helmet-girl.jpg" alt="イラスト作品" loading="lazy">
+      <img src="assets/img/works/illustration-girl-blue-flowers.jpg" alt="イラスト作品" loading="lazy">
     </a>
+  </div>
+
+  <div class="hero-cta reveal" style="margin-top:2.4rem;">
+    <a class="btn" href="works.html">すべての作品を見る</a>
   </div>
 </section>
 
-<hr class="divider">
-
-<section class="container reveal">
-  <div class="section-head">
-    <p class="eyebrow">Get in touch</p>
-    <h2>一緒に何か作りませんか</h2>
-    <p>お仕事のご依頼、ご質問などお気軽にご連絡ください。</p>
+<footer id="contact">
+  <div class="container footer-contact">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>一緒に何か作りませんか</h2>
+      <p>お仕事のご依頼、コラボレーションのご相談、作品へのご感想など、お気軽にご連絡ください。</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:linzilang20@gmail.com">linzilang20@gmail.com</a>
+      <a href="https://www.instagram.com/hayasi88/" target="_blank" rel="noopener">Instagram — @hayasi88</a>
+      <a href="https://www.facebook.com/profile.php?id=100087488462026" target="_blank" rel="noopener">Facebook</a>
+    </div>
   </div>
-  <a class="btn btn-solid" href="contact.html">Contact Me</a>
-</section>
-
-<footer>
-  <div class="container">
-    <span>&copy; <span id="year"></span> Lin Zilang. All rights reserved.</span>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=100087488462026" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46H16.5V4.35C16.24 4.32 15.36 4.24 14.33 4.24c-2.15 0-3.62 1.31-3.62 3.72v2.54H8.25v3H10.7V21h2.8z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/hayasi88/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.7 0 3 .01 4.1.06 1 .05 1.6.2 2 .35.5.2.86.43 1.24.8.37.38.6.74.8 1.24.15.4.3 1 .35 2 .05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1-.2 1.6-.35 2-.2.5-.43.86-.8 1.24-.38.37-.74.6-1.24.8-.4.15-1 .3-2 .35-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1-.05-1.6-.2-2-.35-.5-.2-.86-.43-1.24-.8-.37-.38-.6-.74-.8-1.24-.15-.4-.3-1-.35-2-.05-1.1-.06-1.4-.06-4.1s.01-3 .06-4.1c.05-1 .2-1.6.35-2 .2-.5.43-.86.8-1.24.38-.37.74-.6 1.24-.8.4-.15 1-.3 2-.35 1.1-.05 1.4-.06 4.1-.06M12 0C9.25 0 8.9.01 7.8.07c-1.1.05-1.85.22-2.5.48-.68.26-1.26.62-1.83 1.19a5 5 0 0 0-1.19 1.83c-.26.65-.43 1.4-.48 2.5C1.75 7.1 1.74 7.45 1.74 10.2v3.6c0 2.75.01 3.1.06 4.2.05 1.1.22 1.85.48 2.5.26.68.62 1.26 1.19 1.83.57.57 1.15.93 1.83 1.19.65.26 1.4.43 2.5.48 1.1.05 1.45.06 4.2.06s3.1-.01 4.2-.06c1.1-.05 1.85-.22 2.5-.48.68-.26 1.26-.62 1.83-1.19.57-.57.93-1.15 1.19-1.83.26-.65.43-1.4.48-2.5.05-1.1.06-1.45.06-4.2s-.01-3.1-.06-4.2c-.05-1.1-.22-1.85-.48-2.5a5 5 0 0 0-1.19-1.83A5 5 0 0 0 19.7.55c-.65-.26-1.4-.43-2.5-.48C16.1.01 15.75 0 13 0h-1zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
-      </a>
+  <div class="footer-bar">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Lin Zilang. All rights reserved.</span>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100087488462026" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46H16.5V4.35C16.24 4.32 15.36 4.24 14.33 4.24c-2.15 0-3.62 1.31-3.62 3.72v2.54H8.25v3H10.7V21h2.8z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/hayasi88/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.7 0 3 .01 4.1.06 1 .05 1.6.2 2 .35.5.2.86.43 1.24.8.37.38.6.74.8 1.24.15.4.3 1 .35 2 .05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1-.2 1.6-.35 2-.2.5-.43.86-.8 1.24-.38.37-.74.6-1.24.8-.4.15-1 .3-2 .35-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1-.05-1.6-.2-2-.35-.5-.2-.86-.43-1.24-.8-.37-.38-.6-.74-.8-1.24-.15-.4-.3-1-.35-2-.05-1.1-.06-1.4-.06-4.1s.01-3 .06-4.1c.05-1 .2-1.6.35-2 .2-.5.43-.86.8-1.24.38-.37.74-.6 1.24-.8.4-.15 1-.3 2-.35 1.1-.05 1.4-.06 4.1-.06M12 0C9.25 0 8.9.01 7.8.07c-1.1.05-1.85.22-2.5.48-.68.26-1.26.62-1.83 1.19a5 5 0 0 0-1.19 1.83c-.26.65-.43 1.4-.48 2.5C1.75 7.1 1.74 7.45 1.74 10.2v3.6c0 2.75.01 3.1.06 4.2.05 1.1.22 1.85.48 2.5.26.68.62 1.26 1.19 1.83.57.57 1.15.93 1.83 1.19.65.26 1.4.43 2.5.48 1.1.05 1.45.06 4.2.06s3.1-.01 4.2-.06c1.1-.05 1.85-.22 2.5-.48.68-.26 1.26-.62 1.83-1.19.57-.57.93-1.15 1.19-1.83.26-.65.43-1.4.48-2.5.05-1.1.06-1.45.06-4.2s-.01-3.1-.06-4.2c-.05-1.1-.22-1.85-.48-2.5a5 5 0 0 0-1.19-1.83A5 5 0 0 0 19.7.55c-.65-.26-1.4-.43-2.5-.48C16.1.01 15.75 0 13 0h-1zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </footer>

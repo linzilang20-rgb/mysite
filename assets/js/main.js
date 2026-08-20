@@ -1,3 +1,58 @@
+// ===== Hero background video (YouTube IFrame API) =====
+// Uses the API instead of a `playlist=` loop so YouTube never renders
+// prev/next playlist controls over the background.
+const heroMount = document.getElementById("hero-player");
+if (heroMount) {
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = function () {
+    new YT.Player("hero-player", {
+      videoId: heroMount.dataset.videoId,
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        disablekb: 1,
+        fs: 0,
+        modestbranding: 1,
+        rel: 0,
+        showinfo: 0,
+        iv_load_policy: 3,
+        playsinline: 1,
+      },
+      events: {
+        onReady: (e) => {
+          e.target.mute();
+          e.target.playVideo();
+          document.querySelector(".hero")?.classList.add("video-ready");
+
+          // A paused/ended player draws YouTube's overlay chrome on top of the
+          // hero, so nudge it back to playing whenever it settles anywhere else.
+          setInterval(() => {
+            const s = e.target.getPlayerState();
+            if (s === YT.PlayerState.ENDED) {
+              e.target.seekTo(0);
+              e.target.playVideo();
+            } else if (s === YT.PlayerState.PAUSED || s === YT.PlayerState.CUED) {
+              e.target.playVideo();
+            }
+          }, 1000);
+        },
+        onStateChange: (e) => {
+          if (e.data === YT.PlayerState.ENDED) {
+            e.target.seekTo(0);
+            e.target.playVideo();
+          } else if (e.data === YT.PlayerState.PAUSED) {
+            e.target.playVideo();
+          }
+        },
+      },
+    });
+  };
+}
+
 // ===== Mobile nav toggle =====
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
