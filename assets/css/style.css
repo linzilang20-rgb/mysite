@@ -666,15 +666,16 @@ section:last-of-type { padding-bottom: 6.5rem; }
   margin-bottom: 1.1rem;
 }
 
-/* Experience + skills, so the section carries its own height instead of
-   trailing off into empty padding. */
 .about-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
   margin-top: 5rem;
   padding-top: 3.5rem;
   border-top: 1px solid var(--line);
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
 .about-meta h3 {
@@ -692,34 +693,6 @@ section:last-of-type { padding-bottom: 6.5rem; }
   height: 1px;
   background: var(--accent);
   margin-bottom: 1.1rem;
-}
-
-.timeline { list-style: none; margin: 0; padding: 0; }
-
-.timeline li {
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.timeline li:first-child { padding-top: 0; }
-
-.timeline .yr {
-  color: var(--accent);
-  font-size: .84rem;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: .04em;
-}
-
-.timeline .place { color: var(--text); font-size: .95rem; }
-
-.timeline .major {
-  display: block;
-  margin-top: .25rem;
-  color: var(--text-dim);
-  font-size: .82rem;
 }
 
 .skill-set { margin-bottom: 2rem; }
@@ -746,7 +719,8 @@ section:last-of-type { padding-bottom: 6.5rem; }
 @media (max-width: 780px) {
   .about-layout { grid-template-columns: 1fr; }
   .about-photo { max-width: 260px; }
-  .about-meta { grid-template-columns: 1fr; gap: 3rem; margin-top: 3.5rem; }
+  .about-meta { margin-top: 3.5rem; }
+  .skill-grid { grid-template-columns: 1fr; gap: 2.2rem; }
 }
 
 /* ===== Contact page ===== */
