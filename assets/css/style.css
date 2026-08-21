@@ -284,6 +284,113 @@ section:last-of-type { padding-bottom: 6.5rem; }
   .featured-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ===== Process breakdown ===== */
+.process-project { margin-bottom: 7rem; }
+.process-project:last-child { margin-bottom: 0; }
+
+.process-head {
+  padding-bottom: 1.3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-head h3 {
+  margin: .3rem 0 0;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.process-head .process-en {
+  margin: .3rem 0 0;
+  font-size: .78rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.process-head p.lede {
+  margin: 1rem 0 0;
+  color: var(--text-dim);
+  max-width: 68ch;
+}
+
+/* Each step: number + caption on one side, image on the other, alternating. */
+.step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.step:last-child { margin-bottom: 0; }
+.step:nth-child(even) .step-body { order: 2; }
+
+.step-figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  background: #0d0d0d;
+  cursor: zoom-in;
+}
+
+.step-figure img {
+  width: 100%;
+  display: block;
+  transition: transform .6s var(--ease);
+}
+
+.step-figure:hover img { transform: scale(1.03); }
+
+.step-no {
+  display: inline-block;
+  font-size: .76rem;
+  letter-spacing: .18em;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  border-radius: 2px;
+  padding: .3rem .7rem;
+  margin-bottom: 1.1rem;
+}
+
+.step-body h4 {
+  margin: 0 0 .9rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.step-body p {
+  margin: 0;
+  color: var(--text-dim);
+  line-height: 1.95;
+  max-width: 46ch;
+}
+
+.step-tools {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.step-tools span {
+  font-size: .74rem;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  padding: .3rem .6rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 820px) {
+  .step {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .step:nth-child(even) .step-body { order: 0; }
+  .process-project { margin-bottom: 4.5rem; }
+}
+
 /* ===== View toggle (by medium / by project) ===== */
 .view-toggle {
   display: inline-flex;
