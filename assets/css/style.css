@@ -313,6 +313,39 @@ section:last-of-type { padding-bottom: 6.5rem; }
   max-width: 68ch;
 }
 
+/* Finished render leads each project, before the steps that produced it. */
+.process-hero {
+  position: relative;
+  margin: 0 0 3.6rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  background: #0d0d0d;
+  cursor: zoom-in;
+}
+
+.process-hero img {
+  width: 100%;
+  display: block;
+  transition: transform .7s var(--ease);
+}
+
+.process-hero:hover img { transform: scale(1.02); }
+
+.process-hero figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: .55rem 1rem;
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: rgba(10, 10, 10, .72);
+  backdrop-filter: blur(4px);
+  border-top-right-radius: 3px;
+}
+
 /* Each step: number + caption on one side, image on the other, alternating. */
 .step {
   display: grid;
