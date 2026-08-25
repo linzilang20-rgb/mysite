@@ -62,20 +62,20 @@ function initReveal(scope = document) {
 }
 initReveal();
 
-// ===== Hero parallax =====
-// Drifts the headline slower than the page and fades it as it leaves.
+// ===== Hero fade-out =====
+// Fades the headline and buttons out as the page scrolls past them — no
+// positional drift, so they never linger over the section below.
 const heroInner = document.querySelector(".hero-inner");
 if (heroInner && !REDUCED_MOTION) {
   let ticking = false;
+  const fadeDistance = () => window.innerHeight * 0.45;
   const onScroll = () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        heroInner.style.transform = `translateY(${y * 0.28}px)`;
-        heroInner.style.opacity = String(Math.max(0, 1 - y / (window.innerHeight * 0.75)));
-      }
+      const opacity = Math.max(0, 1 - window.scrollY / fadeDistance());
+      heroInner.style.opacity = String(opacity);
+      heroInner.style.pointerEvents = opacity < 0.05 ? "none" : "";
       ticking = false;
     });
   };
