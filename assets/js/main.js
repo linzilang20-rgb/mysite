@@ -82,78 +82,7 @@ if (heroInner && !REDUCED_MOTION) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
-// ===== Gallery grouping (by medium / by project) =====
-// One pool of figures, two ways to read it. Switching moves the existing
-// nodes rather than re-creating them, so nothing is downloaded twice.
-const galleryRoot = document.getElementById("gallery-root");
-if (galleryRoot) {
-  const allFigures = [...galleryRoot.querySelectorAll("figure")];
-
-  const GROUPS = {
-    medium: [
-      ["watercolor", "水彩画", "Watercolor", "紙と水彩絵具による作品。にじみと重なりを活かして、光や空気の質感を描いています。"],
-      ["pencil-color", "色鉛筆画", "Colored Pencil", "色鉛筆による作品。線を重ねて色をつくり、やわらかい質感と物語の空気感を表現しています。"],
-      ["digital", "デジタルペイント", "Digital Painting", "液晶タブレットと Photoshop / Clip Studio Paint によるデジタルイラストです。"],
-      ["environment", "背景・環境デザイン", "Environment Art", "背景シーンの構築とライティング。空間の設計からアセット配置、雰囲気づくりまでを担当しました。"],
-      ["dessin", "鉛筆デッサン", "Pencil Dessin", "鉛筆による静物デッサン。手をモチーフに、構造と陰影の観察を重ねた習作です。"],
-    ],
-    project: [
-      ["himawari", "ひまわりの日", "Sunflower Day", "手描き 2D アニメーション。イメージボードとキャラクター設定を色鉛筆で制作しました。"],
-      ["zhujian", "逐剣", "Chasing the Sword", "3D / 2D アニメーション。雪山の背景シーンを担当しました。"],
-      ["abyss", "ABYSS II", "Abyss II", "CG ショートフィルム。洞窟シーンのライティングと空間づくりを担当しました。"],
-      ["cyberpunk", "サイバーパンクシティ", "Cyberpunk City", "3DCG による都市の背景デザイン。空間設計からシェーダー、ライティングまで Blender で構築しました。"],
-      ["study", "練習・個人制作", "Studies & Personal Work", "課題や個人制作として描いたイラスト、デッサン、CG の習作です。"],
-    ],
-  };
-
-  const render = (view) => {
-    const key = view === "project" ? "project" : "medium";
-    galleryRoot.textContent = "";
-
-    GROUPS[view].forEach(([id, ja, en, desc], i) => {
-      const items = allFigures.filter((f) => f.dataset[key] === id);
-      if (!items.length) return;
-
-      const group = document.createElement("div");
-      group.className = "gallery-group";
-      group.innerHTML = `
-      <div class="gallery-group-head">
-        <span class="group-index">${String(i + 1).padStart(2, "0")}</span>
-        <div>
-          <h3></h3>
-          <p class="group-en"></p>
-        </div>
-        <p class="group-desc"></p>
-      </div>
-      <div class="masonry stagger"></div>`;
-      group.querySelector("h3").textContent = ja;
-      group.querySelector(".group-en").textContent = en;
-      group.querySelector(".group-desc").textContent = desc;
-
-      const masonry = group.querySelector(".masonry");
-      items.forEach((f) => {
-        f.style.transitionDelay = "";
-        masonry.appendChild(f);
-      });
-      galleryRoot.appendChild(group);
-    });
-
-    initReveal(galleryRoot);
-  };
-
-  document.querySelectorAll(".view-toggle button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.getAttribute("aria-pressed") === "true") return;
-      document.querySelectorAll(".view-toggle button").forEach((b) =>
-        b.setAttribute("aria-pressed", String(b === btn))
-      );
-      render(btn.dataset.view);
-    });
-  });
-}
-
 // ===== Lightbox (image gallery) =====
-// Delegated so figures moved by the grouping switch stay clickable.
 const lightbox = document.getElementById("lightbox");
 if (lightbox) {
   const lightboxImg = lightbox.querySelector("img");
