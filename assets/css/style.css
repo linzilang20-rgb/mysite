@@ -229,6 +229,21 @@ a { color: inherit; text-decoration: none; }
 
 .btn-solid:hover { background: #ecb977; color: #17130b; }
 
+@media (max-width: 480px) {
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .8rem;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+}
+
 /* ===== Section scaffolding ===== */
 section { padding: 7.5rem 0; }
 
