@@ -14,9 +14,9 @@
   <div class="container">
     <a class="brand" href="index.html">LIN ZILANG</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="works.html" aria-current="page">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="works.html" aria-current="page" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-right">
       <div class="social-icons">
@@ -30,6 +30,19 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.7 0 3 .01 4.1.06 1 .05 1.6.2 2 .35.5.2.86.43 1.24.8.37.38.6.74.8 1.24.15.4.3 1 .35 2 .05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1-.2 1.6-.35 2-.2.5-.43.86-.8 1.24-.38.37-.74.6-1.24.8-.4.15-1 .3-2 .35-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1-.05-1.6-.2-2-.35-.5-.2-.86-.43-1.24-.8-.37-.38-.6-.74-.8-1.24-.15-.4-.3-1-.35-2-.05-1.1-.06-1.4-.06-4.1s.01-3 .06-4.1c.05-1 .2-1.6.35-2 .2-.5.43-.86.8-1.24.38-.37.74-.6 1.24-.8.4-.15 1-.3 2-.35 1.1-.05 1.4-.06 4.1-.06M12 0C9.25 0 8.9.01 7.8.07c-1.1.05-1.85.22-2.5.48-.68.26-1.26.62-1.83 1.19a5 5 0 0 0-1.19 1.83c-.26.65-.43 1.4-.48 2.5C1.75 7.1 1.74 7.45 1.74 10.2v3.6c0 2.75.01 3.1.06 4.2.05 1.1.22 1.85.48 2.5.26.68.62 1.26 1.19 1.83.57.57 1.15.93 1.83 1.19.65.26 1.4.43 2.5.48 1.1.05 1.45.06 4.2.06s3.1-.01 4.2-.06c1.1-.05 1.85-.22 2.5-.48.68-.26 1.26-.62 1.83-1.19.57-.57.93-1.15 1.19-1.83.26-.65.43-1.4.48-2.5.05-1.1.06-1.45.06-4.2s-.01-3.1-.06-4.2c-.05-1.1-.22-1.85-.48-2.5a5 5 0 0 0-1.19-1.83A5 5 0 0 0 19.7.55c-.65-.26-1.4-.43-2.5-.48C16.1.01 15.75 0 13 0h-1zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
         </a>
       </div>
+      <div class="nav-divider"></div>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="言語を選択 / Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-caret"></span>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button type="button" role="menuitem" data-lang="ja">日本語</button>
+          <button type="button" role="menuitem" data-lang="zh-CN">简体中文</button>
+          <button type="button" role="menuitem" data-lang="zh-TW">繁體中文</button>
+          <button type="button" role="menuitem" data-lang="en">English</button>
+        </div>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
     </div>
   </div>
@@ -37,14 +50,14 @@
 
 <div class="container page-head reveal">
   <h1>Portfolio</h1>
-  <p>イラスト・CG作品と、2D／3Dアニメーション作品をまとめています。画像はクリックで拡大、動画カードはクリックで再生します。</p>
+  <p data-i18n="works.pageDesc">イラスト・CG作品と、2D／3Dアニメーション作品をまとめています。画像はクリックで拡大、動画カードはクリックで再生します。</p>
 </div>
 
 <section class="container">
   <div class="section-head reveal">
     <p class="eyebrow">01 — Animation &amp; CG Video</p>
-    <h2>映像作品</h2>
-    <p>カードをクリックすると YouTube 動画を再生します。</p>
+    <h2 data-i18n="works.videoHeading">映像作品</h2>
+    <p data-i18n="works.videoDesc">カードをクリックすると YouTube 動画を再生します。</p>
   </div>
 
   <div class="video-grid stagger">
@@ -56,7 +69,7 @@
       </div>
       <div class="video-meta">
         <h3>逐剣 — CHASING THE SWORD</h3>
-        <p>3D / 2D アニメーション作品</p>
+        <p data-i18n="video.sword.sub">3D / 2D アニメーション作品</p>
       </div>
     </div>
 
@@ -67,7 +80,7 @@
       </div>
       <div class="video-meta">
         <h3>ひまわりの日</h3>
-        <p>手描き 2D アニメーション</p>
+        <p data-i18n="video.sunflower.sub">手描き 2D アニメーション</p>
       </div>
     </div>
 
@@ -78,7 +91,7 @@
       </div>
       <div class="video-meta">
         <h3>Soul Memory</h3>
-        <p>CG アニメーション</p>
+        <p data-i18n="video.soul.sub">CG アニメーション</p>
       </div>
     </div>
 
@@ -89,7 +102,7 @@
       </div>
       <div class="video-meta">
         <h3>ABYSS</h3>
-        <p>CG ショートフィルム</p>
+        <p data-i18n="video.abyss.sub">CG ショートフィルム</p>
       </div>
     </div>
 
@@ -100,7 +113,7 @@
       </div>
       <div class="video-meta">
         <h3>Honda CIVIC</h3>
-        <p>CG映像制作</p>
+        <p data-i18n="video.honda.sub">CG映像制作</p>
       </div>
     </div>
 
@@ -111,7 +124,7 @@
       </div>
       <div class="video-meta">
         <h3>サイバーパンクシティ</h3>
-        <p>3D CG アニメーション</p>
+        <p data-i18n="video.cyber.sub">3D CG アニメーション</p>
       </div>
     </div>
 
@@ -123,16 +136,16 @@
 <section class="container">
   <div class="section-head reveal">
     <p class="eyebrow">02 — Process</p>
-    <h2>制作プロセス</h2>
-    <p>3DCG 作品について、完成カットとそこに至るまでの工程をまとめました。画像はクリックで拡大できます。</p>
+    <h2 data-i18n="works.processHeading">制作プロセス</h2>
+    <p data-i18n="works.processDesc">3DCG 作品について、完成カットとそこに至るまでの工程をまとめました。画像はクリックで拡大できます。</p>
   </div>
 
   <div class="process-project">
     <div class="process-head reveal">
-      <p class="eyebrow">プロップデザイン</p>
+      <p class="eyebrow" data-i18n="proj.telescope.eyebrow">プロップデザイン</p>
       <h3>望遠鏡</h3>
       <p class="process-en">Telescope</p>
-      <p class="lede">夜間観測用の双眼鏡。アイデアスケッチから起こし、PBR ワークフローでモデリングとテクスチャリングを行いました。ここに至るまでの工程を順に紹介します。</p>
+      <p class="lede" data-i18n="proj.telescope.lede">夜間観測用の双眼鏡。アイデアスケッチから起こし、PBR ワークフローでモデリングとテクスチャリングを行いました。ここに至るまでの工程を順に紹介します。</p>
     </div>
     <figure class="process-hero reveal" data-lightbox>
       <img src="assets/img/process/tele-hero.jpg" alt="望遠鏡 完成レンダリング" loading="lazy">
@@ -141,8 +154,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 01</span>
-          <h4>アイデアスケッチ</h4>
-          <p>形のバランスと各パーツの位置をスケッチで固めます。持ったときの手の収まりを考えながら、正面と背面の二面を描きました。</p>
+          <h4 data-i18n="step.ideaSketch">アイデアスケッチ</h4>
+          <p data-i18n="proj.telescope.s1.desc">形のバランスと各パーツの位置をスケッチで固めます。持ったときの手の収まりを考えながら、正面と背面の二面を描きました。</p>
           <div class="step-tools"><span>Photoshop</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -152,8 +165,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 02</span>
-          <h4>モデリング</h4>
-          <p>スケッチをもとに Maya で造形し、面の流れを整えます。硬質な機械物なので、エッジの立ち方でシルエットが決まるよう気を配りました。</p>
+          <h4 data-i18n="step.modeling">モデリング</h4>
+          <p data-i18n="proj.telescope.s2.desc">スケッチをもとに Maya で造形し、面の流れを整えます。硬質な機械物なので、エッジの立ち方でシルエットが決まるよう気を配りました。</p>
           <div class="step-tools"><span>Maya</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -163,8 +176,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 03</span>
-          <h4>UV 展開</h4>
-          <p>UVLayout と ZBrush を併用し、歪みが出ないよう展開します。パーツごとに島を分け、後から塗り分けやすい配置にしました。</p>
+          <h4 data-i18n="step.uvUnwrap">UV 展開</h4>
+          <p data-i18n="proj.telescope.s3.desc">UVLayout と ZBrush を併用し、歪みが出ないよう展開します。パーツごとに島を分け、後から塗り分けやすい配置にしました。</p>
           <div class="step-tools"><span>UVLayout</span><span>ZBrush</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -174,8 +187,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 04</span>
-          <h4>テクスチャ制作</h4>
-          <p>Substance 3D Painter で彩色。塗装の下地、金属の擦れ、レンズのコーティングを層に分け、使い込まれた道具の質感を出しています。</p>
+          <h4 data-i18n="step.texturing">テクスチャ制作</h4>
+          <p data-i18n="proj.telescope.s4.desc">Substance 3D Painter で彩色。塗装の下地、金属の擦れ、レンズのコーティングを層に分け、使い込まれた道具の質感を出しています。</p>
           <div class="step-tools"><span>Substance 3D Painter</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -185,10 +198,10 @@
   </div>
   <div class="process-project">
     <div class="process-head reveal">
-      <p class="eyebrow">CG ショートフィルム</p>
+      <p class="eyebrow" data-i18n="proj.abyss.eyebrow">CG ショートフィルム</p>
       <h3>ABYSS II</h3>
       <p class="process-en">Abyss II</p>
-      <p class="lede">洞窟に鎮座する巨像。参考資料とイメージボードから始め、人物・主体物・岩石を個別にモデリングしたうえで Unreal Engine 5 に配置し、ライティングで仕上げました。</p>
+      <p class="lede" data-i18n="proj.abyss.lede">洞窟に鎮座する巨像。参考資料とイメージボードから始め、人物・主体物・岩石を個別にモデリングしたうえで Unreal Engine 5 に配置し、ライティングで仕上げました。</p>
     </div>
     <figure class="process-hero reveal" data-lightbox>
       <img src="assets/img/process/abyss-hero.jpg" alt="ABYSS II 完成シーン" loading="lazy">
@@ -197,8 +210,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 01</span>
-          <h4>参考資料とイメージボード</h4>
-          <p>まず大量のリファレンスを集め、頭の中のイメージをイメージボードとして描き起こします。巨像と人物の体格差が画面で伝わる画角を探りました。</p>
+          <h4 data-i18n="proj.abyss.s1.title">参考資料とイメージボード</h4>
+          <p data-i18n="proj.abyss.s1.desc">まず大量のリファレンスを集め、頭の中のイメージをイメージボードとして描き起こします。巨像と人物の体格差が画面で伝わる画角を探りました。</p>
           <div class="step-tools"><span>Photoshop</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -208,8 +221,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 02</span>
-          <h4>人物モデリング</h4>
-          <p>メインアセット上半身の人体を ZBrush でハイポリスカルプトし、ZRemesher でリダクション。その後 Maya でリトポロジーと UV 展開を行い、肌の質感を作り込みます。</p>
+          <h4 data-i18n="proj.abyss.s2.title">人物モデリング</h4>
+          <p data-i18n="proj.abyss.s2.desc">メインアセット上半身の人体を ZBrush でハイポリスカルプトし、ZRemesher でリダクション。その後 Maya でリトポロジーと UV 展開を行い、肌の質感を作り込みます。</p>
           <div class="step-tools"><span>ZBrush</span><span>Maya</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -219,8 +232,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 03</span>
-          <h4>主体物モデリング</h4>
-          <p>人物の下半身にあたる石の台座を造形。石と苔を重ね、長い年月そこにあったように仕上げます。台座の紋様は青銅器の資料をもとに彫りました。</p>
+          <h4 data-i18n="proj.abyss.s3.title">主体物モデリング</h4>
+          <p data-i18n="proj.abyss.s3.desc">人物の下半身にあたる石の台座を造形。石と苔を重ね、長い年月そこにあったように仕上げます。台座の紋様は青銅器の資料をもとに彫りました。</p>
           <div class="step-tools"><span>ZBrush</span><span>Substance 3D Painter</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -230,8 +243,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 04</span>
-          <h4>岩石モデリング・彫刻</h4>
-          <p>周囲を囲む岩石群も同じ PBR フローで制作。ZBrush でハイポリをスカルプトし、Maya でローポリにリトポロジー、RizomUV で UV 展開を行いました。</p>
+          <h4 data-i18n="proj.abyss.s4.title">岩石モデリング・彫刻</h4>
+          <p data-i18n="proj.abyss.s4.desc">周囲を囲む岩石群も同じ PBR フローで制作。ZBrush でハイポリをスカルプトし、Maya でローポリにリトポロジー、RizomUV で UV 展開を行いました。</p>
           <div class="step-tools"><span>ZBrush</span><span>Maya</span><span>RizomUV</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -241,8 +254,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 05</span>
-          <h4>UE5 シーン配置</h4>
-          <p>Unreal Engine 5 に人物・主体物・岩石アセットを配置。Bridge の 3D アセットパックで植生を構築し、シーン全体の構図を組み立てます。</p>
+          <h4 data-i18n="proj.abyss.s5.title">UE5 シーン配置</h4>
+          <p data-i18n="proj.abyss.s5.desc">Unreal Engine 5 に人物・主体物・岩石アセットを配置。Bridge の 3D アセットパックで植生を構築し、シーン全体の構図を組み立てます。</p>
           <div class="step-tools"><span>Unreal Engine 5</span><span>Quixel Bridge</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -252,8 +265,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 06</span>
-          <h4>ライティングと仕上げ</h4>
-          <p>植生とライティングを、シーン全体の雰囲気を見ながら同時に調整。霧と光の差し込みで洞窟の湿った空気感を作り込み、完成カットに仕上げました。</p>
+          <h4 data-i18n="proj.abyss.s6.title">ライティングと仕上げ</h4>
+          <p data-i18n="proj.abyss.s6.desc">植生とライティングを、シーン全体の雰囲気を見ながら同時に調整。霧と光の差し込みで洞窟の湿った空気感を作り込み、完成カットに仕上げました。</p>
           <div class="step-tools"><span>Unreal Engine 5</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -263,10 +276,10 @@
   </div>
   <div class="process-project">
     <div class="process-head reveal">
-      <p class="eyebrow">CG映像制作</p>
+      <p class="eyebrow" data-i18n="proj.honda.eyebrow">CG映像制作</p>
       <h3>Honda CIVIC</h3>
       <p class="process-en">CG Commercial</p>
-      <p class="lede">車両CGの映像制作。モデリングからテクスチャ、夜の峠道のライティング、編集までを一人で担当しました。</p>
+      <p class="lede" data-i18n="proj.honda.lede">車両CGの映像制作。モデリングからテクスチャ、夜の峠道のライティング、編集までを一人で担当しました。</p>
     </div>
     <figure class="process-hero reveal" data-lightbox>
       <img src="assets/img/process/honda-hero.jpg" alt="Honda CIVIC 完成カット" loading="lazy">
@@ -275,8 +288,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 01</span>
-          <h4>モデリングと UV 展開</h4>
-          <p>実車資料をもとに面を追い、ハイライトが素直に流れるようボディの曲面を整えます。塗り分けを見据えて UV を展開しました。</p>
+          <h4 data-i18n="proj.honda.s1.title">モデリングと UV 展開</h4>
+          <p data-i18n="proj.honda.s1.desc">実車資料をもとに面を追い、ハイライトが素直に流れるようボディの曲面を整えます。塗り分けを見据えて UV を展開しました。</p>
           <div class="step-tools"><span>Blender</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -286,8 +299,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 02</span>
-          <h4>テクスチャ制作</h4>
-          <p>塗装の層と汚れを分けて作成。標準仕様とレーシング仕様の二種類をつくり、走行後の車体らしい表面にしています。</p>
+          <h4 data-i18n="step.texturing">テクスチャ制作</h4>
+          <p data-i18n="proj.honda.s2.desc">塗装の層と汚れを分けて作成。標準仕様とレーシング仕様の二種類をつくり、走行後の車体らしい表面にしています。</p>
           <div class="step-tools"><span>Substance 3D Painter</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -297,8 +310,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 03</span>
-          <h4>背景とライティング</h4>
-          <p>サーキットの峠道を Blender で構築し、走行アニメーションにはパスを使用。フォグとライティングで夜の空気をつくりました。</p>
+          <h4 data-i18n="proj.honda.s3.title">背景とライティング</h4>
+          <p data-i18n="proj.honda.s3.desc">サーキットの峠道を Blender で構築し、走行アニメーションにはパスを使用。フォグとライティングで夜の空気をつくりました。</p>
           <div class="step-tools"><span>Blender</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -308,8 +321,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 04</span>
-          <h4>レンダリングと編集</h4>
-          <p>EEVEE で連番静止画として書き出し、After Effects と Premiere Pro でカラーグレーディングとカット編集を行いました。</p>
+          <h4 data-i18n="proj.honda.s4.title">レンダリングと編集</h4>
+          <p data-i18n="proj.honda.s4.desc">EEVEE で連番静止画として書き出し、After Effects と Premiere Pro でカラーグレーディングとカット編集を行いました。</p>
           <div class="step-tools"><span>Blender</span><span>After Effects</span><span>Premiere Pro</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -322,7 +335,7 @@
       <p class="eyebrow">逐剣</p>
       <h3>火の神仮面</h3>
       <p class="process-en">Fire God Mask</p>
-      <p class="lede">物語の鍵となる仮面。日本の能面と中国の儺戯（ぬおぎ）面を調べたうえで、アニメの画面に馴染む造形へ落とし込みました。</p>
+      <p class="lede" data-i18n="proj.mask.lede">物語の鍵となる仮面。日本の能面と中国の儺戯（ぬおぎ）面を調べたうえで、アニメの画面に馴染む造形へ落とし込みました。</p>
     </div>
     <figure class="process-hero reveal" data-lightbox>
       <img src="assets/img/process/mask-hero.jpg" alt="火の神仮面 本編カット" loading="lazy">
@@ -331,19 +344,19 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 01</span>
-          <h4>デザイン画</h4>
-          <p>仮面のシルエットと角の巻き方、隈取りの入り方を平面で決めます。正面と側面の二面を描き、立体に起こしたときの見え方を先に固めました。</p>
+          <h4 data-i18n="step.artConcept">アートコンセプト</h4>
+          <p data-i18n="proj.mask.s1.desc">仮面のシルエットと角の巻き方、隈取りの入り方を平面で決めます。正面と側面の二面を描き、立体に起こしたときの見え方を先に固めました。</p>
           <div class="step-tools"><span>Photoshop</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
-          <img src="assets/img/process/mask-1-design.jpg" alt="火の神仮面 デザイン画" loading="lazy">
+          <img src="assets/img/process/mask-1-design.jpg" alt="火の神仮面 アートコンセプト" loading="lazy">
         </figure>
       </div>
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 02</span>
-          <h4>ZBrush 彫刻</h4>
-          <p>デザイン画をもとに ZBrush で造形。角の渦や眉のうねりなど、面の流れが光を受けたときに影として読めるよう、彫りの深さを調整しています。</p>
+          <h4 data-i18n="step.zbrushSculpt">ZBrush 彫刻</h4>
+          <p data-i18n="proj.mask.s2.desc">アートコンセプトをもとに ZBrush で造形。角の渦や眉のうねりなど、面の流れが光を受けたときに影として読めるよう、彫りの深さを調整しています。</p>
           <div class="step-tools"><span>ZBrush</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -353,8 +366,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 03</span>
-          <h4>テクスチャ制作</h4>
-          <p>Substance 3D Painter で彩色。京劇の隈取りを参照しつつ、漆の艶と金彩の擦れを重ね、古びた祭具としての質感を出しました。</p>
+          <h4 data-i18n="step.texturing">テクスチャ制作</h4>
+          <p data-i18n="proj.mask.s3.desc">Substance 3D Painter で彩色。京劇の隈取りを参照しつつ、漆の艶と金彩の擦れを重ね、古びた祭具としての質感を出しました。</p>
           <div class="step-tools"><span>Substance 3D Painter</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -367,7 +380,7 @@
       <p class="eyebrow">逐剣</p>
       <h3>キャラクターデザイン</h3>
       <p class="process-en">Character Design</p>
-      <p class="lede">主人公・祝剣（しゅくけん）の設定から最終モデルまで。アニメーションの画面に耐える立体でありながら、半写真的ではない中間の質感を目指しました。</p>
+      <p class="lede" data-i18n="proj.char.lede">主人公・祝剣（しゅくけん）のキャラクターデザイン。設定画から最終モデルまで一貫して手がけ、アニメーションのカットに馴染みながらも写実に寄りすぎない、中間的な質感を目指しました。</p>
     </div>
     <figure class="process-hero reveal" data-lightbox>
       <img src="assets/img/process/char-hero.jpg" alt="逐剣 キャラクター 最終モデル" loading="lazy">
@@ -376,8 +389,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 01</span>
-          <h4>三面図と設定</h4>
-          <p>正面・背面・側面と髪の流れ、配色、衣装と小物の素材を一枚にまとめます。ここで決めた色数と素材が、後のテクスチャの指針になります。</p>
+          <h4 data-i18n="proj.char.s1.title">三面図と設定</h4>
+          <p data-i18n="proj.char.s1.desc">正面・背面・側面と髪の流れ、配色、衣装と小物の素材を一枚にまとめます。ここで決めた色数と素材が、後のテクスチャの指針になります。</p>
           <div class="step-tools"><span>Clip Studio Paint</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -387,8 +400,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 02</span>
-          <h4>モデリング</h4>
-          <p>三面図をもとに造形し、リギングとアニメーションに耐えるトポロジーへ整えます。衣の重なりは布のシミュレーションを前提に分けて作りました。</p>
+          <h4 data-i18n="step.modeling">モデリング</h4>
+          <p data-i18n="proj.char.s2.desc">三面図をもとに造形し、リギングとアニメーションに耐えるトポロジーへ整えます。衣の重なりは布のシミュレーションを前提に分けて作りました。</p>
           <div class="step-tools"><span>Maya</span><span>Marvelous Designer</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -398,8 +411,8 @@
       <div class="step reveal">
         <div class="step-body">
           <span class="step-no">STEP 03</span>
-          <h4>テクスチャ制作</h4>
-          <p>顔は UV の歪みが出やすいため、モデル修正とテクスチャを往復しながら調整。半写実に寄りすぎないよう、肌の陰影は手で描き足しています。</p>
+          <h4 data-i18n="step.texturing">テクスチャ制作</h4>
+          <p data-i18n="proj.char.s3.desc">顔は UV の歪みが出やすいため、モデル修正とテクスチャを往復しながら調整。写実に寄りすぎないよう、肌の陰影は手で描き足しています。</p>
           <div class="step-tools"><span>Substance 3D Painter</span><span>Photoshop</span></div>
         </div>
         <figure class="step-figure" data-lightbox>
@@ -414,8 +427,8 @@
 <section class="container">
   <div class="section-head reveal">
     <p class="eyebrow">03 — Works</p>
-    <h2>作品一覧</h2>
-    <p>技法別にまとめています。画像はクリックで拡大できます。</p>
+    <h2 data-i18n="works.galleryHeading">作品一覧</h2>
+    <p data-i18n="works.galleryDesc">技法別にまとめています。画像はクリックで拡大できます。</p>
   </div>
 
   <div id="gallery-root">
@@ -423,10 +436,10 @@
       <div class="gallery-group-head">
         <span class="group-index">01</span>
         <div>
-          <h3>水彩画</h3>
+          <h3 data-i18n="gallery.g1.title">水彩画</h3>
           <p class="group-en">Watercolor</p>
         </div>
-        <p class="group-desc">紙と水彩絵具による作品。にじみと重なりを活かして、光や空気の質感を描いています。</p>
+        <p class="group-desc" data-i18n="gallery.g1.desc">紙と水彩絵具による作品。にじみと重なりを活かして、光や空気の質感を描いています。</p>
       </div>
       <div class="masonry stagger">
         <figure data-lightbox><img src="assets/img/works/illustration-kimono-girl.jpg" alt="着物の女の子 水彩" loading="lazy"></figure>
@@ -441,10 +454,10 @@
       <div class="gallery-group-head">
         <span class="group-index">02</span>
         <div>
-          <h3>色鉛筆画</h3>
+          <h3 data-i18n="gallery.g2.title">色鉛筆画</h3>
           <p class="group-en">Colored Pencil</p>
         </div>
-        <p class="group-desc">色鉛筆による作品。線を重ねて色をつくり、やわらかい質感と物語の空気感を表現しています。</p>
+        <p class="group-desc" data-i18n="gallery.g2.desc">色鉛筆による作品。線を重ねて色をつくり、やわらかい質感と物語の空気感を表現しています。</p>
       </div>
       <div class="masonry stagger">
         <figure data-lightbox><img src="assets/img/works/illustration-boy-in-the-grass.jpg" alt="草原の少年 色鉛筆" loading="lazy"></figure>
@@ -457,10 +470,10 @@
       <div class="gallery-group-head">
         <span class="group-index">03</span>
         <div>
-          <h3>デジタルペイント</h3>
+          <h3 data-i18n="gallery.g3.title">デジタルペイント</h3>
           <p class="group-en">Digital Painting</p>
         </div>
-        <p class="group-desc">液晶タブレットと Photoshop / Clip Studio Paint によるデジタルイラストです。</p>
+        <p class="group-desc" data-i18n="gallery.g3.desc">液晶タブレットと Photoshop / Clip Studio Paint によるデジタルイラストです。</p>
       </div>
       <div class="masonry stagger">
         <figure data-lightbox><img src="assets/img/works/illustration-picnic.jpg" alt="ピクニック デジタルイラスト" loading="lazy"></figure>
@@ -471,10 +484,10 @@
       <div class="gallery-group-head">
         <span class="group-index">04</span>
         <div>
-          <h3>鉛筆デッサン</h3>
+          <h3 data-i18n="gallery.g4.title">鉛筆デッサン</h3>
           <p class="group-en">Pencil Dessin</p>
         </div>
-        <p class="group-desc">鉛筆による静物デッサン。手をモチーフに、構造と陰影の観察を重ねた習作です。</p>
+        <p class="group-desc" data-i18n="gallery.g4.desc">鉛筆による静物デッサン。手をモチーフに、構造と陰影の観察を重ねた習作です。</p>
       </div>
       <div class="masonry stagger">
         <figure data-lightbox><img src="assets/img/works/dessin-hands-1.jpg" alt="静物デッサン 手 鉛筆" loading="lazy"></figure>
@@ -488,9 +501,9 @@
 <footer id="contact">
   <div class="container footer-contact">
     <div>
-      <p class="eyebrow">Contact</p>
-      <h2>一緒に何か作りませんか</h2>
-      <p>お仕事のご依頼、コラボレーションのご相談、作品へのご感想など、お気軽にご連絡ください。</p>
+      <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+      <h2 data-i18n="contact.heading">一緒に何か作りませんか</h2>
+      <p data-i18n="contact.body">お仕事のご依頼、コラボレーションのご相談、作品へのご感想など、お気軽にご連絡ください。</p>
     </div>
     <div class="footer-links">
       <a href="mailto:linzilang20@gmail.com">linzilang20@gmail.com</a>
@@ -515,6 +528,7 @@
 </div>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

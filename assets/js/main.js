@@ -7,13 +7,32 @@ const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").mat
 const heroVideo = document.querySelector(".hero-video-bg video");
 if (heroVideo) {
   const showVideo = () => document.querySelector(".hero")?.classList.add("video-ready");
-  if (heroVideo.readyState >= 3) showVideo();
-  heroVideo.addEventListener("canplay", showVideo, { once: true });
+  // Reveal only once the video is actually playing — canplay alone fires
+  // even when autoplay was silently blocked, which left mobile visitors
+  // staring at a frozen first frame that looked like a static image.
+  heroVideo.addEventListener("playing", showVideo);
+  if (!heroVideo.paused) showVideo();
 
-  // Some browsers refuse autoplay until muted state is confirmed in JS.
   heroVideo.muted = true;
-  const tryPlay = () => heroVideo.play().catch(() => {});
+  let playing = false;
+  const tryPlay = () => {
+    heroVideo
+      .play()
+      .then(() => { playing = true; })
+      .catch(() => {});
+  };
   tryPlay();
+
+  // Mobile browsers commonly reject the autoplay attempt made before any
+  // user interaction. The moment the visitor touches/clicks anywhere, retry
+  // once — that gesture satisfies the browser's autoplay requirement.
+  const retryOnGesture = () => {
+    if (!playing) tryPlay();
+  };
+  ["touchstart", "click"].forEach((evt) =>
+    document.addEventListener(evt, retryOnGesture, { once: true, passive: true })
+  );
+
   // Mobile Safari suspends background video when the tab is hidden.
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) tryPlay();

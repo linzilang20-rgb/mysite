@@ -14,9 +14,9 @@
   <div class="container">
     <a class="brand" href="index.html">LIN ZILANG</a>
     <ul class="nav-links">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="works.html">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
+      <li><a href="works.html" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-right">
       <div class="social-icons">
@@ -29,6 +29,19 @@
         <a href="https://www.instagram.com/hayasi88/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.7 0 3 .01 4.1.06 1 .05 1.6.2 2 .35.5.2.86.43 1.24.8.37.38.6.74.8 1.24.15.4.3 1 .35 2 .05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1-.2 1.6-.35 2-.2.5-.43.86-.8 1.24-.38.37-.74.6-1.24.8-.4.15-1 .3-2 .35-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1-.05-1.6-.2-2-.35-.5-.2-.86-.43-1.24-.8-.37-.38-.6-.74-.8-1.24-.15-.4-.3-1-.35-2-.05-1.1-.06-1.4-.06-4.1s.01-3 .06-4.1c.05-1 .2-1.6.35-2 .2-.5.43-.86.8-1.24.38-.37.74-.6 1.24-.8.4-.15 1-.3 2-.35 1.1-.05 1.4-.06 4.1-.06M12 0C9.25 0 8.9.01 7.8.07c-1.1.05-1.85.22-2.5.48-.68.26-1.26.62-1.83 1.19a5 5 0 0 0-1.19 1.83c-.26.65-.43 1.4-.48 2.5C1.75 7.1 1.74 7.45 1.74 10.2v3.6c0 2.75.01 3.1.06 4.2.05 1.1.22 1.85.48 2.5.26.68.62 1.26 1.19 1.83.57.57 1.15.93 1.83 1.19.65.26 1.4.43 2.5.48 1.1.05 1.45.06 4.2.06s3.1-.01 4.2-.06c1.1-.05 1.85-.22 2.5-.48.68-.26 1.26-.62 1.83-1.19.57-.57.93-1.15 1.19-1.83.26-.65.43-1.4.48-2.5.05-1.1.06-1.45.06-4.2s-.01-3.1-.06-4.2c-.05-1.1-.22-1.85-.48-2.5a5 5 0 0 0-1.19-1.83A5 5 0 0 0 19.7.55c-.65-.26-1.4-.43-2.5-.48C16.1.01 15.75 0 13 0h-1zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
         </a>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="言語を選択 / Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-caret"></span>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button type="button" role="menuitem" data-lang="ja">日本語</button>
+          <button type="button" role="menuitem" data-lang="zh-CN">简体中文</button>
+          <button type="button" role="menuitem" data-lang="zh-TW">繁體中文</button>
+          <button type="button" role="menuitem" data-lang="en">English</button>
+        </div>
       </div>
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
     </div>
@@ -44,12 +57,12 @@
     </video>
   </div>
   <div class="container hero-inner">
-    <p class="eyebrow">CG · Illustration · Animation</p>
+    <p class="eyebrow" data-i18n="hero.eyebrow">CG · Illustration · Animation</p>
     <h1>LIN ZILANG</h1>
-    <p>CGとアニメーション、イラストレーションを軸に制作しています。武蔵野美術大学大学院にて映像を専攻。現実にはない世界と物語を、絵と映像で届けたい。</p>
+    <p data-i18n="hero.desc">CGとアニメーション、イラストレーションを軸に制作しています。武蔵野美術大学大学院にて映像を専攻。現実にはない世界と物語を、絵と映像で届けたい。</p>
     <div class="hero-cta">
-      <a class="btn btn-solid" href="works.html">View Portfolio</a>
-      <a class="btn" href="#about">About Me</a>
+      <a class="btn btn-solid" href="works.html" data-i18n="hero.viewPortfolio">View Portfolio</a>
+      <a class="btn" href="#about" data-i18n="hero.aboutMe">About Me</a>
     </div>
   </div>
 </header>
@@ -58,28 +71,28 @@
 
 <section class="container" id="about">
   <div class="section-head reveal">
-    <p class="eyebrow">About</p>
-    <h2>プロフィール</h2>
+    <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+    <h2 data-i18n="about.heading">プロフィール</h2>
   </div>
 
   <div class="about-layout reveal">
     <img class="about-photo" src="assets/img/site/about-portrait.jpg" alt="林梓朗（リン シロウ）">
 
     <div class="about-copy">
-      <p>こんにちは、私はリン シロウです。現在、武蔵野美術大学の映像・写真学科に在籍している大学院一年生です。私はこれまでに様々なクリエイティブな分野で活動してきましたが、特にCG（コンピュータグラフィックス）に強い興味を持っています。</p>
-      <p>私の趣味は絵を描くこととスキーです。絵を描くことは、私の創造力を育み、技術を磨くための重要な手段です。スキーは、自然の中でリフレッシュするだけでなく、バランス感覚や集中力を養う助けとなっています。</p>
+      <p data-i18n="about.bio1">こんにちは、私はリン シロウです。現在、武蔵野美術大学の映像・写真学科に在籍している大学院一年生です。私はこれまでに様々なクリエイティブな分野で活動してきましたが、特にCG（コンピュータグラフィックス）に強い興味を持っています。</p>
+      <p data-i18n="about.bio2">私の趣味は絵を描くこととスキーです。絵を描くことは、私の創造力を育み、技術を磨くための重要な手段です。スキーは、自然の中でリフレッシュするだけでなく、バランス感覚や集中力を養う助けとなっています。</p>
 
-      <h3>現在の研究分野</h3>
-      <p>現在の研究分野はCGです。CGの魅力は、その無限の可能性にあります。現実には存在しない世界やキャラクターを創り出すことができるだけでなく、現実を超えた美しさや驚きを表現することができます。私にとってCGは、アイデアを具現化するための最適なツールであり、視覚的な物語を語る手段です。</p>
+      <h3 data-i18n="about.fieldHeading">現在の研究分野</h3>
+      <p data-i18n="about.fieldBody">現在の研究分野はCGです。CGの魅力は、その無限の可能性にあります。現実には存在しない世界やキャラクターを創り出すことができるだけでなく、現実を超えた美しさや驚きを表現することができます。私にとってCGは、アイデアを具現化するための最適なツールであり、視覚的な物語を語る手段です。</p>
 
-      <h3>目標</h3>
-      <p>私の目標は、手描きアニメーションを通じて観る人に感動や喜びを届けることです。アニメーションを通じて物語を語り、キャラクターの感情を伝えることで、人々の心に残る作品を作りたいと考えています。</p>
-      <p>これからも新しい技術やスタイルを取り入れながら、手描きアニメーションとCGの魅力を追求していきます。私の作品をご覧いただき、ご意見やご感想をお寄せいただけると幸いです。ありがとうございました。</p>
+      <h3 data-i18n="about.goalHeading">目標</h3>
+      <p data-i18n="about.goalBody1">私の目標は、手描きアニメーションを通じて観る人に感動や喜びを届けることです。アニメーションを通じて物語を語り、キャラクターの感情を伝えることで、人々の心に残る作品を作りたいと考えています。</p>
+      <p data-i18n="about.goalBody2">これからも新しい技術やスタイルを取り入れながら、手描きアニメーションとCGの魅力を追求していきます。私の作品をご覧いただき、ご意見やご感想をお寄せいただけると幸いです。ありがとうございました。</p>
     </div>
   </div>
 
   <div class="about-meta reveal">
-    <h3>Skills</h3>
+    <h3 data-i18n="skills.heading">Skills</h3>
     <div class="skill-grid">
       <div class="skill-set">
         <h4>Adobe Creative Cloud</h4>
@@ -106,9 +119,9 @@
 <footer id="contact">
   <div class="container footer-contact">
     <div>
-      <p class="eyebrow">Contact</p>
-      <h2>一緒に何か作りませんか</h2>
-      <p>お仕事のご依頼、コラボレーションのご相談、作品へのご感想など、お気軽にご連絡ください。</p>
+      <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+      <h2 data-i18n="contact.heading">一緒に何か作りませんか</h2>
+      <p data-i18n="contact.body">お仕事のご依頼、コラボレーションのご相談、作品へのご感想など、お気軽にご連絡ください。</p>
     </div>
     <div class="footer-links">
       <a href="mailto:linzilang20@gmail.com">linzilang20@gmail.com</a>
@@ -122,6 +135,7 @@
 </footer>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
