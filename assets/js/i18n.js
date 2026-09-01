@@ -20,10 +20,10 @@ const I18N = {
   "about.eyebrow": { ja: "About", en: "About", "zh-CN": "About", "zh-TW": "About" },
   "about.heading": { ja: "プロフィール", en: "Profile", "zh-CN": "个人简介", "zh-TW": "個人簡介" },
   "about.bio1": {
-    ja: "こんにちは、私はリン シロウです。現在、武蔵野美術大学の映像・写真学科に在籍している大学院一年生です。私はこれまでに様々なクリエイティブな分野で活動してきましたが、特にCG（コンピュータグラフィックス）に強い興味を持っています。",
-    en: "Hello, I'm Rin Shirou. I'm currently a first-year graduate student in the Department of Imaging Arts and Sciences at Musashino Art University. I've worked across a variety of creative fields, but I have a particularly strong interest in CG (computer graphics).",
-    "zh-CN": "大家好，我是林梓朗。目前是武藏野美术大学映像・摄影学科研究生一年级学生。至今活跃于多个创意领域，其中对 CG（计算机图形）有着特别浓厚的兴趣。",
-    "zh-TW": "大家好，我是林梓朗。目前是武藏野美術大學映像・攝影學科研究所一年級學生。至今活躍於多個創意領域，其中對 CG（電腦圖形）有著特別濃厚的興趣。",
+    ja: "こんにちは、私はリン シロウです。現在、武蔵野美術大学の映像・写真学科に在籍している大学院一年生です。私はこれまでに様々なクリエイティブな分野で活動してきましたが、特にCGに強い興味を持っています。",
+    en: "Hello, I'm Rin Shirou. I'm currently a first-year graduate student in the Department of Imaging Arts and Sciences at Musashino Art University. I've worked across a variety of creative fields, but I have a particularly strong interest in CG.",
+    "zh-CN": "大家好，我是林梓朗。目前是武藏野美术大学映像・摄影学科研究生一年级学生。至今活跃于多个创意领域，其中对 CG 有着特别浓厚的兴趣。",
+    "zh-TW": "大家好，我是林梓朗。目前是武藏野美術大學映像・攝影學科研究所一年級學生。至今活躍於多個創意領域，其中對 CG 有著特別濃厚的興趣。",
   },
   "about.bio2": {
     ja: "私の趣味は絵を描くこととスキーです。絵を描くことは、私の創造力を育み、技術を磨くための重要な手段です。スキーは、自然の中でリフレッシュするだけでなく、バランス感覚や集中力を養う助けとなっています。",
