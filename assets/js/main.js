@@ -39,6 +39,33 @@ if (heroVideo) {
   });
 }
 
+// ===== Works sub-nav (section jump + scroll-spy) =====
+const worksSubnav = document.querySelector(".works-subnav");
+if (worksSubnav) {
+  const links = [...worksSubnav.querySelectorAll("a")];
+  const targets = links
+    .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${id}`));
+  };
+
+  const subnavObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((e) => e.isIntersecting);
+      if (visible.length === 0) return;
+      // Pick the entry closest to the top of the viewport so the active
+      // pill tracks whichever section is actually leading the screen.
+      const top = visible.reduce((a, b) => (a.boundingClientRect.top < b.boundingClientRect.top ? a : b));
+      setActive(top.target.id);
+    },
+    { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+  );
+  targets.forEach((el) => subnavObserver.observe(el));
+  if (targets[0]) setActive(targets[0].id);
+}
+
 // ===== Mobile nav toggle =====
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
