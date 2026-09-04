@@ -212,7 +212,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 45;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 64px;
 }
 
 .works-dotnav::before {
@@ -274,7 +274,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 780px) {
-  .works-dotnav { right: 14px; gap: 20px; }
+  .works-dotnav { right: 14px; gap: 44px; }
   .works-dotnav::before { top: 8px; bottom: 8px; }
   .dotnav-item { height: 16px; }
   .dotnav-item .dot { width: 8px; height: 8px; }
