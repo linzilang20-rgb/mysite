@@ -3,7 +3,7 @@
 // fallback so switching back to 日本語 always reproduces the exact current
 // page. en / zh-CN / zh-TW / ko are added translations.
 const I18N = {
-  "nav.home": { ja: "Home", en: "Home", "zh-CN": "首页", "zh-TW": "首頁", ko: "홈" },
+  "nav.home": { ja: "ホーム", en: "Home", "zh-CN": "首页", "zh-TW": "首頁", ko: "홈" },
   "nav.portfolio": { ja: "Portfolio", en: "Portfolio", "zh-CN": "作品集", "zh-TW": "作品集", ko: "포트폴리오" },
   "nav.contact": { ja: "Contact", en: "Contact", "zh-CN": "联系方式", "zh-TW": "聯絡方式", ko: "연락처" },
 
@@ -15,8 +15,8 @@ const I18N = {
     "zh-TW": "以 CG、動畫與插畫為主軸進行創作。目前於武藏野美術大學研究所攻讀影像專業。希望透過繪畫與影像，將現實中不存在的世界與故事傳遞給大家。",
     ko: "CG, 애니메이션, 일러스트레이션을 중심으로 제작하고 있습니다. 무사시노미술대학 대학원에서 영상을 전공하고 있으며, 현실에는 없는 세계와 이야기를 그림과 영상으로 전하고 싶습니다.",
   },
-  "hero.viewPortfolio": { ja: "View Portfolio", en: "View Portfolio", "zh-CN": "查看作品集", "zh-TW": "查看作品集", ko: "포트폴리오 보기" },
-  "hero.aboutMe": { ja: "About Me", en: "About Me", "zh-CN": "关于我", "zh-TW": "關於我", ko: "소개" },
+  "hero.viewPortfolio": { ja: "作品を見る", en: "View Portfolio", "zh-CN": "查看作品集", "zh-TW": "查看作品集", ko: "포트폴리오 보기" },
+  "hero.aboutMe": { ja: "私について", en: "About Me", "zh-CN": "关于我", "zh-TW": "關於我", ko: "소개" },
 
   "about.eyebrow": { ja: "About", en: "About", "zh-CN": "About", "zh-TW": "About", ko: "About" },
   "about.heading": { ja: "プロフィール", en: "Profile", "zh-CN": "个人简介", "zh-TW": "個人簡介", ko: "프로필" },
