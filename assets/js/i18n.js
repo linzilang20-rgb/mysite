@@ -3,20 +3,20 @@
 // fallback so switching back to 日本語 always reproduces the exact current
 // page. en / zh-CN / zh-TW / ko are added translations.
 const I18N = {
-  "nav.home": { ja: "Home", en: "Home", "zh-CN": "首页", "zh-TW": "首頁", ko: "홈" },
-  "nav.portfolio": { ja: "Portfolio", en: "Portfolio", "zh-CN": "作品集", "zh-TW": "作品集", ko: "포트폴리오" },
-  "nav.contact": { ja: "Contact", en: "Contact", "zh-CN": "联系方式", "zh-TW": "聯絡方式", ko: "연락처" },
+  "nav.home": { ja: "ホーム", en: "Home", "zh-CN": "首页", "zh-TW": "首頁", ko: "홈" },
+  "nav.portfolio": { ja: "ポートフォリオ", en: "Portfolio", "zh-CN": "作品集", "zh-TW": "作品集", ko: "포트폴리오" },
+  "nav.contact": { ja: "コンタクト", en: "Contact", "zh-CN": "联系方式", "zh-TW": "聯絡方式", ko: "연락처" },
 
-  "hero.eyebrow": { ja: "CG · Illustration · Animation", en: "CG · Illustration · Animation", "zh-CN": "CG · Illustration · Animation", "zh-TW": "CG · Illustration · Animation", ko: "CG · 일러스트 · 애니메이션" },
+  "hero.eyebrow": { ja: "CG・イラストレーション・アニメーション", en: "CG · Illustration · Animation", "zh-CN": "CG · Illustration · Animation", "zh-TW": "CG · Illustration · Animation", ko: "CG · 일러스트 · 애니메이션" },
   "hero.desc": {
-    ja: "CGとアニメーション、イラストレーションを軸に制作しています。武蔵野美術大学大学院にて映像を専攻。現実にはない世界と物語を、絵と映像で届けたい。",
-    en: "I create centered on CG, animation, and illustration. Currently pursuing a graduate degree in film at Musashino Art University. I want to deliver worlds and stories that don't exist in reality through art and video.",
-    "zh-CN": "以 CG、动画与插画为主轴进行创作。目前于武藏野美术大学研究生院攻读影像专业。希望通过绘画与影像，将现实中不存在的世界与故事传递给大家。",
-    "zh-TW": "以 CG、動畫與插畫為主軸進行創作。目前於武藏野美術大學研究所攻讀影像專業。希望透過繪畫與影像，將現實中不存在的世界與故事傳遞給大家。",
-    ko: "CG, 애니메이션, 일러스트레이션을 중심으로 제작하고 있습니다. 무사시노미술대학 대학원에서 영상을 전공하고 있으며, 현실에는 없는 세계와 이야기를 그림과 영상으로 전하고 싶습니다.",
+    ja: "CG、アニメーション、イラストレーションを軸に制作しています。武蔵野美術大学大学院で映像を専攻しています。現実にはない世界と物語を、絵と映像で届けたい。",
+    en: "I create through CG, animation, and illustration. I study film at the graduate school of Musashino Art University. Through images and video, I want to share worlds and stories beyond reality.",
+    "zh-CN": "我以 CG、动画与插画为创作主轴。目前在武藏野美术大学研究生院学习影像。希望通过绘画与影像，传递现实之外的世界与故事。",
+    "zh-TW": "我以 CG、動畫與插畫為創作主軸。目前在武藏野美術大學研究所學習影像。希望透過繪畫與影像，傳遞現實之外的世界與故事。",
+    ko: "CG, 애니메이션, 일러스트레이션을 중심으로 제작합니다. 무사시노미술대학 대학원에서 영상을 전공하고 있습니다. 그림과 영상으로 현실 너머의 세계와 이야기를 전하고 싶습니다.",
   },
-  "hero.viewPortfolio": { ja: "View Portfolio", en: "View Portfolio", "zh-CN": "查看作品集", "zh-TW": "查看作品集", ko: "포트폴리오 보기" },
-  "hero.aboutMe": { ja: "About Me", en: "About Me", "zh-CN": "关于我", "zh-TW": "關於我", ko: "소개" },
+  "hero.viewPortfolio": { ja: "作品を見る", en: "View Portfolio", "zh-CN": "查看作品集", "zh-TW": "查看作品集", ko: "포트폴리오 보기" },
+  "hero.aboutMe": { ja: "私について", en: "About Me", "zh-CN": "关于我", "zh-TW": "關於我", ko: "소개" },
 
   "about.eyebrow": { ja: "About", en: "About", "zh-CN": "About", "zh-TW": "About", ko: "About" },
   "about.heading": { ja: "プロフィール", en: "Profile", "zh-CN": "个人简介", "zh-TW": "個人簡介", ko: "프로필" },
@@ -60,7 +60,7 @@ const I18N = {
 
   "skills.heading": { ja: "Skills", en: "Skills", "zh-CN": "Skills", "zh-TW": "Skills", ko: "Skills" },
 
-  "contact.eyebrow": { ja: "Contact", en: "Contact", "zh-CN": "Contact", "zh-TW": "Contact", ko: "Contact" },
+  "contact.eyebrow": { ja: "コンタクト", en: "Contact", "zh-CN": "Contact", "zh-TW": "Contact", ko: "Contact" },
   "contact.heading": { ja: "一緒に何か作りませんか", en: "Let's Create Something Together", "zh-CN": "一起创作些什么吧", "zh-TW": "一起創作些什麼吧", ko: "함께 무언가를 만들어 보지 않으시겠어요" },
   "contact.body": {
     ja: "お仕事のご依頼、コラボレーションのご相談、作品へのご感想など、お気軽にご連絡ください。",

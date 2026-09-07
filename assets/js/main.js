@@ -76,6 +76,26 @@ if (navToggle && navLinks) {
   );
 }
 
+// Contact sits in the footer, after image-heavy portfolio sections. A direct
+// bottom scroll keeps the jump reliable even while the page finishes settling.
+document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const contact = document.getElementById("contact");
+    if (!contact) return;
+
+    e.preventDefault();
+    history.pushState(null, "", "#contact");
+    const scrollToContact = () => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: REDUCED_MOTION ? "auto" : "smooth",
+      });
+    };
+
+    scrollToContact();
+    [120, 360, 720].forEach((delay) => window.setTimeout(scrollToContact, delay));
+  });
+});
 // ===== Scroll reveal =====
 // `.reveal` fades a block in; `.stagger` additionally walks its children so
 // grid items arrive one after another rather than all at once.
