@@ -9,11 +9,11 @@ const I18N = {
 
   "hero.eyebrow": { ja: "CG・イラストレーション・アニメーション", en: "CG · Illustration · Animation", "zh-CN": "CG · Illustration · Animation", "zh-TW": "CG · Illustration · Animation", ko: "CG · 일러스트 · 애니메이션" },
   "hero.desc": {
-    ja: "CG、アニメーション、イラストレーションを軸に制作しています。武蔵野美術大学大学院で映像を専攻しています。現実にはない世界と物語を、絵と映像で届けたい。",
-    en: "I create through CG, animation, and illustration. I study film at the graduate school of Musashino Art University. Through images and video, I want to share worlds and stories beyond reality.",
-    "zh-CN": "我以 CG、动画与插画为创作主轴。目前在武藏野美术大学研究生院学习影像。希望通过绘画与影像，传递现实之外的世界与故事。",
-    "zh-TW": "我以 CG、動畫與插畫為創作主軸。目前在武藏野美術大學研究所學習影像。希望透過繪畫與影像，傳遞現實之外的世界與故事。",
-    ko: "CG, 애니메이션, 일러스트레이션을 중심으로 제작합니다. 무사시노미술대학 대학원에서 영상을 전공하고 있습니다. 그림과 영상으로 현실 너머의 세계와 이야기를 전하고 싶습니다.",
+    ja: "私のホームページをご覧いただきありがとうございます。CG、アニメーション、イラストレーションを軸に制作しています。絵と映像を通して、現実の外にある世界と物語を届けたいです。現在は映像業界でも活動しており、皆さんとインスピレーションを交わしながら、一緒に制作していきたいです。",
+    en: "Thank you for visiting my homepage. I create through CG, animation, and illustration. Through drawing and moving images, I hope to share worlds and stories beyond reality. I also work in the visual media field and look forward to exchanging ideas and creating together.",
+    "zh-CN": "感谢您来到我的主页。我以 CG、动画与插画为创作主轴。希望通过绘画与影像，传递现实之外的世界与故事。目前我也从事映像行业，期待与大家交流灵感，一起创作新的作品。",
+    "zh-TW": "感謝您來到我的主頁。我以 CG、動畫與插畫為創作主軸。希望透過繪畫與影像，傳遞現實之外的世界與故事。目前我也從事映像行業，期待與大家交流靈感，一起創作新的作品。",
+    ko: "제 홈페이지에 와 주셔서 감사합니다. 저는 CG, 애니메이션, 일러스트레이션을 중심으로 제작합니다. 그림과 영상으로 현실 너머의 세계와 이야기를 전하고 싶습니다. 현재 영상 분야에서도 활동하며, 여러분과 영감을 나누고 함께 새로운 작품을 만들어 가고 싶습니다.",
   },
   "hero.viewPortfolio": { ja: "作品を見る", en: "View Portfolio", "zh-CN": "查看作品集", "zh-TW": "查看作品集", ko: "포트폴리오 보기" },
   "hero.aboutMe": { ja: "私について", en: "About Me", "zh-CN": "关于我", "zh-TW": "關於我", ko: "소개" },
